@@ -15,11 +15,11 @@
             --ven-red: #cf142b;
             --dark-bg: #050a18;
             --card-bg: #101a35;
+            --success-green: #28a745;
         }
 
         body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--dark-bg); color: #fff; line-height: 1.6; }
         
-        /* HEADER & HERO */
         header { 
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1599408080081-306263884392?auto=format&fit=crop&q=80&w=1200');
             background-size: cover; background-position: center;
@@ -27,41 +27,65 @@
         }
 
         .logo-container img { max-width: 250px; filter: drop-shadow(0 0 15px rgba(255,204,0,0.5)); }
-
         .hero-title { font-family: 'Orbitron'; font-size: 2.5rem; margin: 20px 0; text-transform: uppercase; }
         .hero-title span { color: var(--ven-yellow); }
 
-        /* TICKER DE RESULTADOS */
         .ticker { background: var(--ven-blue); padding: 10px 0; overflow: hidden; white-space: nowrap; border-top: 1px solid #ffffff33; }
         .ticker-content { display: inline-block; animation: scroll 30s linear infinite; }
         @keyframes scroll { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
         .ticker-item { margin-right: 50px; font-weight: bold; color: var(--ven-yellow); }
 
-        /* EL DATO EXPLOSIVO */
-        .power-play { 
-            max-width: 800px; margin: -40px auto 40px; background: var(--card-bg); 
-            border: 2px solid var(--ven-yellow); border-radius: 15px; padding: 30px;
-            text-align: center; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        /* SECCIÓN DE PRONÓSTICOS (NUEVA) */
+        .pronosticos-wrapper {
+            max-width: 1000px; margin: -20px auto 40px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px; padding: 0 15px;
         }
-        .badge { background: var(--ven-red); padding: 5px 15px; border-radius: 20px; font-weight: bold; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); }
 
-        /* SECCIÓN SEO */
-        .seo-content { max-width: 900px; margin: 40px auto; padding: 0 20px; text-align: center; }
-        .seo-content h2 { color: var(--ven-yellow); font-family: 'Orbitron'; font-size: 1.8rem; }
-        .seo-content p { font-size: 1.1rem; color: #ccc; }
+        .card-pronostico {
+            background: var(--card-bg); border-radius: 15px; overflow: hidden;
+            border: 1px solid rgba(255, 204, 0, 0.2); box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        }
 
-        /* GRID DE HIPÓDROMOS */
-        .grid-hipodromos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; max-width: 1100px; margin: auto; }
-        .card { background: #162244; border-radius: 12px; padding: 20px; border-left: 5px solid var(--ven-blue); transition: 0.3s; text-decoration: none; color: #fff; }
-        .card:hover { transform: translateY(-5px); border-left-color: var(--ven-yellow); background: #1c2b55; }
+        .card-header {
+            padding: 12px; text-align: center; font-family: 'Orbitron';
+            font-weight: bold; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .h-rojo { background: linear-gradient(90deg, var(--ven-red), #8b0e1d); }
+        .h-azul { background: linear-gradient(90deg, var(--ven-blue), #001f61); }
 
-        /* BOTONES */
+        .card-body { padding: 25px; text-align: center; }
+
+        /* Estilos Fijo */
+        .fijo-tag { font-size: 0.8rem; opacity: 0.8; color: var(--ven-yellow); }
+        .fijo-num { font-size: 3.5rem; font-weight: 900; line-height: 1; margin: 10px 0; color: #fff; }
+        .fijo-name { font-size: 1.4rem; font-weight: bold; color: var(--ven-yellow); text-transform: uppercase; }
+        .fijo-desc { font-size: 0.95rem; color: #ccc; margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; font-style: italic; }
+
+        /* Estilos 5y6 */
+        .grid-5y6 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .v-box { background: rgba(255,255,255,0.05); padding: 8px; border-radius: 6px; font-size: 0.9rem; display: flex; justify-content: space-between; }
+        .v-label { color: var(--ven-yellow); font-weight: bold; }
+        .v-linea { color: #39ff14; font-weight: 900; }
+
+        .btn-sellar {
+            display: block; background: var(--success-green); color: #fff;
+            text-align: center; padding: 15px; margin-top: 20px;
+            border-radius: 8px; text-decoration: none; font-weight: bold;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3); transition: 0.3s;
+        }
+        .btn-sellar:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+        /* BOTONES Y OTROS */
         .btn-main { 
             display: inline-block; background: #24A1DE; color: white; padding: 18px 40px; 
             border-radius: 50px; font-weight: 900; text-decoration: none; font-size: 1.2rem;
             box-shadow: 0 10px 20px rgba(36, 161, 222, 0.4); transition: 0.3s;
         }
-        .btn-main:hover { transform: scale(1.05); background: #2cb5f5; }
+        
+        .grid-hipodromos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; max-width: 1100px; margin: auto; }
+        .card { background: #162244; border-radius: 12px; padding: 20px; border-left: 5px solid var(--ven-blue); transition: 0.3s; text-decoration: none; color: #fff; }
+        .card:hover { transform: translateY(-5px); border-left-color: var(--ven-yellow); background: #1c2b55; }
 
         footer { text-align: center; padding: 40px; background: #000; font-size: 0.8rem; opacity: 0.6; }
     </style>
@@ -72,9 +96,8 @@
     <div class="logo-container">
         <img src="tu-logo-generado.png" alt="Super Hípicos - Mejores Datos Hípicos de Venezuela">
     </div>
-    <h1 class="hero-title">Los Mejores <span>Datos Hípicos</span> de Venezuela</h1>
-    <p>La fuente #1 de pronósticos profesionales. ¡Asegura tu jugada hoy mismo!</p>
-    <br>
+    <div id="fecha-hoy" style="font-family: 'Orbitron'; color: var(--ven-yellow); margin-bottom: 10px;"></div>
+    <h1 class="hero-title">Los Mejores <span>Datos Hípicos</span></h1>
     <a href="https://t.me/TuCanalSuperHipicos" class="btn-main" rel="nofollow">🚀 ÚNETE AL TELEGRAM VIP</a>
 </header>
 
@@ -83,52 +106,67 @@
         <span class="ticker-item">🔥 LA RINCONADA: ¡Ganó el 1er Fijo! Paga: Bs. 85.30</span>
         <span class="ticker-item">🏆 VALENCIA: ¡Cuadro con 6 aciertos detectado!</span>
         <span class="ticker-item">⭐ GULFSTREAM: Trifecta acertada en la 3era</span>
-        <span class="ticker-item">🔥 LA RINCONADA: El "Dato de Cierre" fue un éxito</span>
     </div>
 </div>
 
 <main>
-    <section class="power-play">
-        <span class="badge">LÍNEA DE ORO</span>
-        <h2 style="font-family: 'Orbitron'; color: var(--ven-yellow);">EL DATO EXPLOSIVO</h2>
-        <div style="font-size: 1.5rem; margin: 15px 0;">📍 La Rinconada - 5ta Carrera</div>
-        <div style="font-weight: 900; font-size: 2rem; color: #fff;">#7 "EL GRAN GUERRERO"</div>
-        <p style="opacity: 0.8;">Excelente ajuste de 400 en 24.2. Por cancha es lo más fijo de la jornada.</p>
-    </section>
+    <section class="pronosticos-wrapper">
+        
+        <div class="card-pronostico">
+            <div class="card-header h-rojo">📍 EL DATO DE CIERRE</div>
+            <div class="card-body">
+                <span class="fijo-tag">LA RINCONADA - 10MA CARRERA</span>
+                <div class="fijo-num">#2</div>
+                <div class="fijo-name">MI QUERIDA EMMA</div>
+                <p class="fijo-desc">
+                    "Es la velocidad de la carrera. Sus aprontes indican que está lista para ganar de punta a punta en esta distancia."
+                </p>
+            </div>
+        </div>
 
-    <section class="seo-content">
-        <h2>¿Por qué seguir nuestros datos hípicos?</h2>
-        <p>
-            En <strong>Super Hípicos</strong> analizamos cada retrospecto, condición física y apronte para ofrecerte los 
-            <strong>datos hípicos para La Rinconada</strong> más confiables. Ya sea que busques ganar el 
-            <strong>5y6 nacional</strong> o prefieras las carreras internacionales, nuestro análisis profesional 
-            te da la ventaja que necesitas frente a las taquillas.
-        </p>
+        <div class="card-pronostico">
+            <div class="card-header h-azul">🇻🇪 CUADRO SUGERIDO 5Y6</div>
+            <div class="card-body">
+                <div class="grid-5y6">
+                    <div class="v-box"><span class="v-label">1V:</span> <span>(4) - (2) - (13)</span></div>
+                    <div class="v-box"><span class="v-label">2V:</span> <span>(9) - (4) - (7)</span></div>
+                    <div class="v-box"><span class="v-label">3V:</span> <span class="v-linea">LÍNEA (10)</span></div>
+                    <div class="v-box"><span class="v-label">4V:</span> <span>(6) - (2)</span></div>
+                    <div class="v-box"><span class="v-label">5V:</span> <span class="v-linea">LÍNEA (8)</span></div>
+                    <div class="v-box"><span class="v-label">6V:</span> <span>(13) - (11) - (1)</span></div>
+                </div>
+                <a href="#" class="btn-sellar">🏇 SELLAR CUADRO AQUÍ</a>
+                <div style="font-size: 0.7rem; margin-top: 10px; opacity: 0.6;">CÓDIGO PROMO: <b style="color:var(--ven-yellow)">SUPERHIPICOS</b></div>
+            </div>
+        </div>
+
     </section>
 
     <div class="grid-hipodromos">
         <a href="la-rinconada.html" class="card">
             <h3>🇻🇪 La Rinconada</h3>
-            <p>Marcas, fijos y el análisis carrera a carrera para el Hipódromo Nacional.</p>
-            <span style="color: var(--ven-yellow);">Ver Datos Hípicos →</span>
+            <p>Marcas, fijos y análisis para el Hipódromo Nacional.</p>
         </a>
         <a href="valencia.html" class="card">
             <h3>🇻🇪 Valencia</h3>
-            <p>Pronósticos exclusivos para el Hipódromo de Carabobo y sus acumulados.</p>
-            <span style="color: var(--ven-yellow);">Ver Pronósticos →</span>
+            <p>Pronósticos exclusivos para el Hipódromo de Carabobo.</p>
         </a>
         <a href="internacional.html" class="card">
             <h3>🇺🇸 Hipismo USA</h3>
-            <p>Gulfstream Park, Belmont y más. Los mejores tips de la Florida y Nueva York.</p>
-            <span style="color: var(--ven-yellow);">Ver Marcas →</span>
+            <p>Gulfstream Park, Belmont y más tips de la Florida.</p>
         </a>
     </div>
 </main>
 
 <footer>
-    <p>© 2026 superhipicos.com.ve - Los especialistas en datos hípicos en Venezuela.</p>
-    <p>Juega con responsabilidad. Solo para mayores de 18 años.</p>
+    <p>© 2026 superhipicos.com.ve - Especialistas en datos hípicos.</p>
 </footer>
+
+<script>
+    // Actualizar fecha automáticamente
+    const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('fecha-hoy').innerText = new Date().toLocaleDateString('es-ES', opciones).toUpperCase();
+</script>
 
 </body>
 </html>
