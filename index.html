@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -35,11 +35,10 @@
 
         .main-container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
 
-        /* SECCIÓN FIJO DEL DÍA */
+        /* SECCIÓN FIJO DEL DÍA (SOLO TEXTO) */
         .fijo-container { background: var(--white); border-radius: 8px; border: 1px solid #ddd; margin-bottom: 30px; overflow: hidden; }
         .fijo-header { background: #d32f2f; color: #fff; padding: 15px; text-align: center; font-weight: 900; text-transform: uppercase; }
-        .fijo-img { width: 100%; max-height: 250px; object-fit: cover; border-bottom: 3px solid var(--inh-gold); }
-        .fijo-body { padding: 25px; text-align: center; }
+        .fijo-body { padding: 30px; text-align: center; }
 
         /* SECCIÓN CONSENSO EXPERTOS */
         .consenso-wrapper { background: var(--inh-green); border-radius: 12px; padding: 20px; color: white; margin-bottom: 30px; }
@@ -49,10 +48,11 @@
         .experto-fijo { background: #fff3e0; color: #e65100; font-size: 0.85rem; padding: 2px 8px; border-radius: 4px; border: 1px solid #ffcc80; }
         .experto-marcas { font-size: 0.85rem; margin-top: 5px; color: #555; }
 
-        /* SECCIÓN CUADRO 5Y6 */
+        /* SECCIÓN CUADRO 5Y6 CON TÍTULO */
         .card-5y6 { background: var(--white); border-radius: 12px; border: 2px solid var(--inh-green); margin-bottom: 30px; overflow: hidden; }
-        .header-5y6-img { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 15px; background: #f9f9f9; border-bottom: 2px solid var(--inh-green); }
-        .header-5y6-img img { height: 50px; }
+        .header-5y6-img { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 15px; background: #f9f9f9; border-bottom: 1px solid #eee; }
+        .header-5y6-img img { height: 45px; }
+        .titulo-cuadro { background: var(--inh-green); color: white; text-align: center; padding: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
         .grid-5y6 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 20px; }
         .v-box { border-bottom: 1px solid #eee; padding: 8px; display: flex; justify-content: space-between; }
         .v-label { font-weight: 900; color: var(--inh-dark-green); }
@@ -60,10 +60,16 @@
 
         /* SECCIÓN ARTÍCULOS */
         .articulos-seccion { margin-top: 50px; text-align: center; }
-        .articulos-banner { max-width: 100%; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .articulos-banner { max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 30px; }
         .grid-articulos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 30px; }
-        .card-articulo { background: var(--white); border-left: 5px solid var(--inh-gold); padding: 20px; border-radius: 4px; text-align: left; }
+        .card-articulo { background: var(--white); border-left: 5px solid var(--inh-gold); padding: 20px; border-radius: 4px; text-align: left; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .card-articulo h3 { color: var(--inh-dark-green); margin-top: 0; font-size: 1.1rem; }
 
+        .btn-main { 
+            display: inline-block; background: #24A1DE; color: white; padding: 15px 30px; 
+            border-radius: 50px; font-weight: 900; text-decoration: none; text-transform: uppercase;
+            margin: 20px 0; transition: 0.3s; box-shadow: 0 4px 15px rgba(36, 161, 222, 0.3);
+        }
         .btn-sellar { display: block; background: var(--inh-green); color: #fff; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: 900; margin: 0 20px 20px; }
         
         footer { text-align: center; padding: 30px; background: var(--inh-dark-green); color: var(--white); }
@@ -77,6 +83,7 @@
     </div>
     <h1 class="hero-title">Centro de Pronósticos Nacional</h1>
     <div id="fecha-hoy">CARGANDO...</div>
+    <a href="https://t.me/TuCanalSuperHipicos" class="btn-main">🚀 ÚNETE AL TELEGRAM VIP</a>
 </header>
 
 <div class="ticker">
@@ -91,12 +98,11 @@
     
     <section class="fijo-container">
         <div class="fijo-header">📍 EL FIJO DEL DÍA</div>
-        <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/TBD.jpg" alt="Hipódromo" class="fijo-img">
         <div class="fijo-body">
-            <div style="font-size: 1rem; font-weight: bold; color: #d32f2f;">WILL ROGERS DOWNS / CARRERA 6</div>
-            <div style="font-size: 2.2rem; font-weight: 900; margin: 10px 0;">2 BUSINESS AS USUAL</div>
-            <p style="font-style: italic; color: #555; border-top: 1px solid #eee; padding-top: 10px;">
-                "Ejemplar con excelente video y monta de primera. Es la jugada de seguridad para hoy."
+            <div style="font-size: 1.1rem; font-weight: bold; color: #d32f2f; text-transform: uppercase;">Will Rogers Downs / Carrera 6</div>
+            <div style="font-size: 2.5rem; font-weight: 900; margin: 15px 0; color: var(--inh-dark-green);">#2 BUSINESS AS USUAL</div>
+            <p style="font-size: 1.1rem; color: #444; border-top: 2px solid var(--inh-gold); padding-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                "Ejemplar con excelente video y monta de primera. Es la jugada de seguridad para la jornada de hoy."
             </p>
         </div>
     </section>
@@ -128,20 +134,21 @@
             <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/inh.png" alt="INH">
             <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/5y6.jpg" alt="5y6 Nacional">
         </div>
+        <div class="titulo-cuadro">Cuadro Sugerido 5y6 Nacional</div>
         <div class="grid-5y6">
-            <div class="v-box"><span class="v-label">1V:</span> <span>(4) - (2)</span></div>
-            <div class="v-box"><span class="v-label">2V:</span> <span>(9) - (4)</span></div>
+            <div class="v-box"><span class="v-label">1V:</span> <span>(4) - (2) - (13)</span></div>
+            <div class="v-box"><span class="v-label">2V:</span> <span>(9) - (4) - (7)</span></div>
             <div class="v-box"><span class="v-label">3V:</span> <span class="v-linea">(10) LÍNEA</span></div>
-            <div class="v-box"><span class="v-label">4V:</span> <span>(6) - (2)</span></div>
+            <div class="v-box"><span class="v-label">4V:</span> <span>(6) - (2) - (1)</span></div>
             <div class="v-box"><span class="v-label">5V:</span> <span class="v-linea">(8) LÍNEA</span></div>
-            <div class="v-box"><span class="v-label">6V:</span> <span>(13) - (11)</span></div>
+            <div class="v-box"><span class="v-label">6V:</span> <span>(13) - (11) - (7)</span></div>
         </div>
-        <a href="#" class="btn-sellar">🏇 SELLAR 5Y6 AQUÍ</a>
+        <a href="#" class="btn-sellar">🏇 SELLAR CUADRO AQUÍ</a>
         <center><p style="font-size: 0.75rem; color: #888;">CÓDIGO PROMO: <b style="color:#d32f2f">ttrqqw5zi</b></p></center>
     </section>
 
     <section class="articulos-seccion">
-        <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/datos-hipicos-articulos.png" alt="Artículos Hipicos" class="articulos-banner">
+        <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/caballo-corriendo.gif" alt="Hipismo" class="articulos-banner">
         
         <div class="grid-articulos">
             <div class="card-articulo">
@@ -155,9 +162,24 @@
                 <a href="#" style="color:var(--inh-green); font-weight:bold; text-decoration:none;">DESCARGAR →</a>
             </div>
             <div class="card-articulo">
+                <h3>Carreras Americanas</h3>
+                <p>Pronósticos diarios para los hipódromos de EE.UU.</p>
+                <a href="#" style="color:var(--inh-green); font-weight:bold; text-decoration:none;">VER DATOS →</a>
+            </div>
+            <div class="card-articulo">
+                <h3>Gulfstream Park</h3>
+                <p>Información de primera para el meeting de Florida.</p>
+                <a href="#" style="color:var(--inh-green); font-weight:bold; text-decoration:none;">VER MARCAS →</a>
+            </div>
+            <div class="card-articulo">
                 <h3>Datos de Parley</h3>
-                <p>Nuestra directa para MLB, NBA y Fútbol hoy.</p>
+                <p>Nuestra selección de logros para MLB, NBA y Fútbol.</p>
                 <a href="#" style="color:var(--inh-green); font-weight:bold; text-decoration:none;">VER JUGADA →</a>
+            </div>
+            <div class="card-articulo">
+                <h3>Guía de Apuestas</h3>
+                <p>Tutoriales para nuevos jugadores y cálculo de cuadros.</p>
+                <a href="#" style="color:var(--inh-green); font-weight:bold; text-decoration:none;">VER GUÍA →</a>
             </div>
         </div>
     </section>
@@ -176,4 +198,3 @@
 
 </body>
 </html>
-
