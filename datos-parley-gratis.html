@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Parley Gratis Hoy | Pronósticos Deportivos y Logros</title>
+    <meta name="description" content="Obtén los mejores datos de parley gratis para hoy. Pronósticos de NBA, MLB, NHL y NFL con logros actualizados y nuestra jugada millonaria. ¡Gana en Super Hípicos!">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --parley-blue: #0d47a1;
+            --parley-gold: #ffc107;
+            --parley-green: #2e7d32;
+            --bg-light: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg-light); color: #333; line-height: 1.8; }
+        p, ul li { text-align: justify; }
+
+        header { 
+            background: var(--white);
+            text-align: center; padding: 20px; 
+            border-bottom: 5px solid var(--parley-blue);
+        }
+        .logo-small img { max-width: 150px; height: auto; }
+
+        .article-container { max-width: 900px; margin: 40px auto; padding: 0 20px; background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+        
+        .hero-img { width: 100%; height: auto; display: block; }
+        
+        .content-padding { padding: 40px; }
+
+        h1 { font-family: 'Orbitron', sans-serif; color: var(--parley-blue); font-size: 1.8rem; margin-bottom: 25px; text-align: center; }
+        h2 { color: var(--parley-blue); border-left: 5px solid var(--parley-gold); padding-left: 15px; margin-top: 40px; }
+
+        /* TICKET DE PARLEY DINÁMICO */
+        .ticket-wrapper { 
+            background: #1a1a1a; color: white; border-radius: 15px; padding: 25px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin: 30px 0; border: 2px solid var(--parley-gold);
+        }
+        .ticket-header { text-align: center; border-bottom: 1px dashed #555; padding-bottom: 15px; margin-bottom: 20px; }
+        .ticket-item { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; background: #262626; padding: 10px; border-radius: 8px; }
+        .league-logo { width: 40px; height: 40px; margin-right: 15px; }
+        .bet-info { flex-grow: 1; }
+        .odds { color: var(--parley-gold); font-weight: 900; font-size: 1.2rem; }
+        
+        .total-box { background: var(--parley-green); padding: 15px; border-radius: 8px; text-align: center; margin-top: 20px; }
+        .return-amount { font-size: 1.5rem; font-weight: 900; color: white; }
+
+        .btn-melbet { 
+            display: block; background: #fb8c00; color: #000; text-align: center; padding: 15px; 
+            border-radius: 8px; text-decoration: none; font-weight: 900; margin-top: 20px; text-transform: uppercase;
+        }
+
+        footer { text-align: center; padding: 40px 20px; background: var(--parley-blue); color: white; margin-top: 50px; }
+        .back-link { display: inline-block; margin-top: 20px; color: var(--parley-gold); text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-small">
+        <a href="index.html"><img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/super-hipicos-logo.jpg" alt="Super Hipicos"></a>
+    </div>
+</header>
+
+<div class="article-container">
+    <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/datos-parley-gratis.webp" alt="Datos de Parley Gratis" class="hero-img">
+    
+    <div class="content-padding">
+        <h1>Datos de Parley Gratis: Logros y Pronósticos Deportivos</h1>
+        
+        <p>
+            ¡Sube tus probabilidades de ganar con los <strong>datos de parley gratis</strong> que tenemos para ti en Super Hípicos! Si eres un apasionado de las apuestas deportivas, aquí encontrarás la mejor selección de logros del día, el análisis de las ligas más importantes como la MLB, NBA, NHL, NFL y el fútbol internacional. No dejes tu dinero al azar y sigue los pronósticos de nuestros expertos.
+        </p>
+
+        <div class="ticket-wrapper">
+            <div class="ticket-header">
+                <h3 style="margin:0; color:var(--parley-gold);">🎫 TICKET DEL DÍA</h3>
+                <small id="current-date">Viernes, 23 de Enero de 2026</small>
+            </div>
+
+            <div class="ticket-item">
+                <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/NBA-logo.png" alt="NBA" class="league-logo">
+                <div class="bet-info">
+                    <strong>Nuggets vs. Hornets</strong><br>
+                    <small>Denver Nuggets -1.5</small>
+                </div>
+                <div class="odds">1.70</div>
+            </div>
+
+            <div class="ticket-item">
+                <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/NFL-logo.png" alt="NFL" class="league-logo">
+                <div class="bet-info">
+                    <strong>Rams vs. Bears</strong><br>
+                    <small>Over/Alta 48</small>
+                </div>
+                <div class="odds">1.91</div>
+            </div>
+
+            <div class="total-box">
+                <div>MULTIPLICADOR: <span id="multiplicador">3.25</span></div>
+                <div class="return-amount">RETORNO ESTIMADO: <span id="retorno">324.70</span></div>
+            </div>
+
+            <a href="TU_ENLACE_MELBET" class="btn-melbet">🎁 REGÍSTRATE EN MELBET - CÓDIGO: SUPERHIPICOS</a>
+        </div>
+
+        <h2>📊 Análisis Estratégico del Parley</h2>
+        <p>Si buscas rentabilizar tus apuestas este 23 de enero de 2026, nuestros expertos han analizado la pizarra para traerte las mejores oportunidades:</p>
+        
+        <ul>
+            <li><strong>Los Ángeles Rams / Alta 48:</strong> El Over se ha dado en los últimos 7 juegos de los Rams de forma consecutiva. Stafford domina bajo presión y el clima no será factor.</li>
+            <li><strong>Denver Nuggets -1.5:</strong> Los modelos computacionales proyectan una victoria de Denver por más de 9 puntos de ventaja, cubriendo el hándicap con holgura.</li>
+        </ul>
+
+        <h2>¿Por qué usar nuestros pronósticos deportivos?</h2>
+        <p>
+            Nuestros <strong>datos de parley gratis</strong> se elaboran analizando estadísticas avanzadas, lesiones de último minuto y tendencias de apuestas. Queremos ser tu fuente principal de información para que puedas tomar decisiones inteligentes y ganar dinero con responsabilidad.
+        </p>
+
+        <center>
+            <a href="index.html" class="back-link">← VOLVER AL INICIO</a>
+        </center>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 superhipicos.com.ve</p>
+    <small>Pronósticos Deportivos y Datos de Parley Gratis</small>
+</footer>
+
+<script>
+    // Script simple para cálculos si decides agregar un input de apuesta en el futuro
+    const cuota1 = 1.70;
+    const cuota2 = 1.91;
+    const multiplicador = (cuota1 * cuota2).toFixed(2);
+    document.getElementById('multiplicador').innerText = multiplicador;
+</script>
+
+</body>
+</html>
