@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -35,20 +35,25 @@
 
         .main-container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
 
-        /* SECCIÓN FIJO DEL DÍA (SOLO TEXTO) */
+        /* SECCIÓN FIJO DEL DÍA */
         .fijo-container { background: var(--white); border-radius: 8px; border: 1px solid #ddd; margin-bottom: 30px; overflow: hidden; }
         .fijo-header { background: #d32f2f; color: #fff; padding: 15px; text-align: center; font-weight: 900; text-transform: uppercase; }
         .fijo-body { padding: 30px; text-align: center; }
 
-        /* SECCIÓN CONSENSO EXPERTOS */
+        /* SECCIÓN CONSENSO EXPERTOS MEJORADA */
         .consenso-wrapper { background: var(--inh-green); border-radius: 12px; padding: 20px; color: white; margin-bottom: 30px; }
         .consenso-header { text-align: center; margin-bottom: 20px; border-bottom: 2px solid rgba(255,255,255,0.2); padding-bottom: 10px; }
         .experto-row { background: white; color: #333; border-radius: 8px; padding: 15px; margin-bottom: 10px; border-left: 5px solid var(--inh-gold); }
-        .experto-name { color: var(--inh-dark-green); font-weight: 900; text-transform: uppercase; display: flex; justify-content: space-between; }
-        .experto-fijo { background: #fff3e0; color: #e65100; font-size: 0.85rem; padding: 2px 8px; border-radius: 4px; border: 1px solid #ffcc80; }
+        .experto-name { color: var(--inh-dark-green); font-weight: 900; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+        .experto-fijo { background: #fff3e0; color: #e65100; font-size: 0.8rem; padding: 2px 8px; border-radius: 4px; border: 1px solid #ffcc80; }
         .experto-marcas { font-size: 0.85rem; margin-top: 5px; color: #555; }
+        
+        /* ITEMS ADICIONALES CONSENSO */
+        .consenso-extras { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .extra-item { background: rgba(0,0,0,0.2); padding: 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1); }
+        .extra-label { display: block; color: var(--inh-gold); font-weight: 900; font-size: 0.75rem; text-transform: uppercase; }
 
-        /* SECCIÓN CUADRO 5Y6 CON TÍTULO */
+        /* SECCIÓN CUADRO 5Y6 */
         .card-5y6 { background: var(--white); border-radius: 12px; border: 2px solid var(--inh-green); margin-bottom: 30px; overflow: hidden; }
         .header-5y6-img { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 15px; background: #f9f9f9; border-bottom: 1px solid #eee; }
         .header-5y6-img img { height: 45px; }
@@ -63,7 +68,6 @@
         .articulos-banner { max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 30px; }
         .grid-articulos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 30px; }
         .card-articulo { background: var(--white); border-left: 5px solid var(--inh-gold); padding: 20px; border-radius: 4px; text-align: left; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .card-articulo h3 { color: var(--inh-dark-green); margin-top: 0; font-size: 1.1rem; }
 
         .btn-main { 
             display: inline-block; background: #24A1DE; color: white; padding: 15px 30px; 
@@ -100,7 +104,7 @@
         <div class="fijo-header">📍 EL FIJO DEL DÍA</div>
         <div class="fijo-body">
             <div style="font-size: 1.1rem; font-weight: bold; color: #d32f2f; text-transform: uppercase;">Will Rogers Downs / Carrera 6</div>
-            <div style="font-size: 2.5rem; font-weight: 900; margin: 15px 0; color: var(--inh-dark-green);">#2 BUSINESS AS USUAL</div>
+            <div style="font-size: 1.8rem; font-weight: 900; margin: 15px 0; color: var(--inh-dark-green);">#2 BUSINESS AS USUAL</div>
             <p style="font-size: 1.1rem; color: #444; border-top: 2px solid var(--inh-gold); padding-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
                 "Ejemplar con excelente video y monta de primera. Es la jugada de seguridad para la jornada de hoy."
             </p>
@@ -109,7 +113,7 @@
 
     <section class="consenso-wrapper">
         <div class="consenso-header">
-            <h3 style="margin:0; font-family: 'Orbitron';">CONSENSO DE EXPERTOS</h3>
+            <h3 style="margin:0; font-family: 'Orbitron';">🇻🇪 CONSENSO DE EXPERTOS 🇻🇪</h3>
             <small>LA RINCONADA - MARCAS DE CIERRE</small>
         </div>
         
@@ -127,6 +131,21 @@
             <div class="experto-name">MÁSTER HÍPICO <span class="experto-fijo">FIJO: 3V: 10 (Baco)</span></div>
             <div class="experto-marcas">1C: 1F / 2C: 3-1 / 3C: 6-8-1 / 4C: 5-1 / 5C: 2-4-5 / 6C: 4-9-7</div>
         </div>
+
+        <div class="consenso-extras">
+            <div class="extra-item">
+                <span class="extra-label">⭐ LÍNEA NACIONAL</span>
+                <b>3ra Válida: (10) BACO</b>
+            </div>
+            <div class="extra-item">
+                <span class="extra-label">⚡ MEJOR TRABAJO</span>
+                <b>5ta Válida: (4) THE QUEEN Z</b>
+            </div>
+            <div class="extra-item">
+                <span class="extra-label">🏁 FIJO DE CIERRE</span>
+                <b>6ta Válida: (13) MI QUERIDA EMMA</b>
+            </div>
+        </div>
     </section>
 
     <section class="card-5y6">
@@ -134,7 +153,7 @@
             <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/inh.png" alt="INH">
             <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/5y6.jpg" alt="5y6 Nacional">
         </div>
-        <div class="titulo-cuadro">Cuadro Sugerido 5y6 Nacional</div>
+        <div class="titulo-cuadro">🇻🇪 Cuadro Sugerido 5y6 Nacional 🇻🇪</div>
         <div class="grid-5y6">
             <div class="v-box"><span class="v-label">1V:</span> <span>(4) - (2) - (13)</span></div>
             <div class="v-box"><span class="v-label">2V:</span> <span>(9) - (4) - (7)</span></div>
@@ -197,4 +216,5 @@
 </script>
 
 </body>
-</html>
+ </html>
+
