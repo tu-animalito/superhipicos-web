@@ -3,204 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos Hípicos Venezuela | Pronósticos La Rinconada y 5y6 Hoy</title>
-    <meta name="description" content="Consigue los mejores datos hípicos para La Rinconada y Valencia. Pronósticos profesionales, el dato de cierre y la línea del 5y6 nacional. ¡Asegura tu jugada!">
-    <meta name="keywords" content="datos hipicos, la rinconada, hipismo venezuela, fijos de valencia, pronosticos hipicos, cuadro 5y6">
+    <title>Super Hípicos | Datos Oficiales La Rinconada y 5y6</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --ven-yellow: #ffcc00;
-            --ven-blue: #0033a0;
-            --ven-red: #cf142b;
-            --dark-bg: #050a18;
-            --card-bg: #101a35;
-            --success-green: #28a745;
+            /* PALETA INH OFICIAL */
+            --inh-green: #2d8033; /* Verde institucional */
+            --inh-gold: #c5a059;  /* Dorado elegante */
+            --inh-dark-green: #1b4d1f;
+            --bg-light: #f4f7f6;
+            --text-dark: #222;
+            --white: #ffffff;
         }
 
-        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--dark-bg); color: #fff; line-height: 1.6; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
         
+        /* HEADER ESTILO INH */
         header { 
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1599408080081-306263884392?auto=format&fit=crop&q=80&w=1200');
-            background-size: cover; background-position: center;
-            text-align: center; padding: 60px 20px; border-bottom: 4px solid var(--ven-yellow);
+            background: var(--white);
+            text-align: center; padding: 30px 20px; 
+            border-bottom: 5px solid var(--inh-green);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .logo-container img { 
-            max-width: 280px; 
-            height: auto;
-            filter: drop-shadow(0 0 10px rgba(255,204,0,0.3)); 
-            border-radius: 10px;
-        }
+        .logo-container img { max-width: 220px; height: auto; }
 
-        .hero-title { font-family: 'Orbitron'; font-size: 2.5rem; margin: 20px 0; text-transform: uppercase; }
-        .hero-title span { color: var(--ven-yellow); }
+        .hero-title { font-family: 'Roboto'; font-weight: 900; font-size: 1.8rem; color: var(--inh-dark-green); margin: 15px 0 5px; text-transform: uppercase; }
+        #fecha-hoy { font-weight: 700; color: #666; font-size: 1.1rem; margin-bottom: 20px; }
 
-        /* TICKER AJUSTADO (Para que no se tape) */
+        /* TICKER ESTILO PRENSA */
         .ticker { 
-            background: var(--ven-blue); 
-            padding: 12px 0; 
+            background: var(--inh-dark-green); 
+            padding: 10px 0; 
             overflow: hidden; 
             white-space: nowrap; 
-            border-top: 1px solid #ffffff33;
-            border-bottom: 2px solid var(--ven-yellow);
-            position: relative;
-            z-index: 10;
+            border-bottom: 3px solid var(--inh-gold);
         }
-        .ticker-content { display: inline-block; animation: scroll 30s linear infinite; }
+        .ticker-content { display: inline-block; animation: scroll 35s linear infinite; }
         @keyframes scroll { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
-        .ticker-item { margin-right: 50px; font-weight: bold; color: var(--ven-yellow); font-size: 0.95rem; }
+        .ticker-item { margin-right: 50px; font-weight: bold; color: var(--white); font-size: 0.9rem; text-transform: uppercase; }
 
+        /* CONTENEDOR DE DATOS TIPO FORMULARIO OFICIAL */
         .pronosticos-wrapper {
-            max-width: 1000px; margin: 40px auto; /* Aumentado margen para evitar solapamiento */
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px; padding: 0 15px;
+            max-width: 1000px; margin: 30px auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px; padding: 0 15px;
         }
 
         .card-pronostico {
-            background: var(--card-bg); border-radius: 15px; overflow: hidden;
-            border: 1px solid rgba(255, 204, 0, 0.2); box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            background: var(--white); border-radius: 8px; overflow: hidden;
+            border: 1px solid #ddd; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .card-header {
-            padding: 12px; text-align: center; font-family: 'Orbitron';
-            font-weight: bold; text-transform: uppercase; letter-spacing: 1px;
+            padding: 12px; text-align: center; color: var(--white);
+            font-weight: 900; text-transform: uppercase; letter-spacing: 1px;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
         }
-        .h-rojo { background: linear-gradient(90deg, var(--ven-red), #8b0e1d); }
-        .h-azul { background: linear-gradient(90deg, var(--ven-blue), #001f61); }
+        .h-fijo { background: #d32f2f; } /* Rojo para impacto en Fijo */
+        .h-5y6 { background: var(--inh-green); }
 
-        .card-body { padding: 25px; text-align: center; }
+        .card-body { padding: 20px; text-align: center; }
 
-        .fijo-tag { font-size: 0.8rem; opacity: 0.8; color: var(--ven-yellow); }
-        .fijo-num { font-size: 3.5rem; font-weight: 900; line-height: 1; margin: 10px 0; color: #fff; }
-        .fijo-name { font-size: 1.4rem; font-weight: bold; color: var(--ven-yellow); text-transform: uppercase; }
-        .fijo-desc { font-size: 0.95rem; color: #ccc; margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; font-style: italic; }
-
-        .grid-5y6 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .v-box { background: rgba(255,255,255,0.05); padding: 8px; border-radius: 6px; font-size: 0.9rem; display: flex; justify-content: space-between; }
-        .v-label { color: var(--ven-yellow); font-weight: bold; }
-        .v-linea { color: #39ff14; font-weight: 900; }
-
-        .btn-sellar {
-            display: block; background: var(--success-green); color: #fff;
-            text-align: center; padding: 15px; margin-top: 20px;
-            border-radius: 8px; text-decoration: none; font-weight: bold;
-            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3); transition: 0.3s;
+        /* Estilo Cuadro 5y6 (Basado en tu imagen) */
+        .grid-5y6 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
+        .v-box { 
+            background: #fff; border-bottom: 2px solid #eee; 
+            padding: 10px; font-size: 1rem; display: flex; justify-content: space-between; 
         }
-        .btn-sellar:hover { transform: translateY(-3px); filter: brightness(1.1); }
+        .v-label { color: var(--inh-dark-green); font-weight: 900; }
+        .v-linea { color: var(--inh-green); font-weight: 900; }
 
+        /* BOTONES DE ACCIÓN */
         .btn-main { 
-            display: inline-block; background: #24A1DE; color: white; padding: 18px 40px; 
-            border-radius: 50px; font-weight: 900; text-decoration: none; font-size: 1.2rem;
-            box-shadow: 0 10px 20px rgba(36, 161, 222, 0.4); transition: 0.3s;
+            display: inline-block; background: var(--inh-green); color: white; padding: 15px 30px; 
+            border-radius: 5px; font-weight: 900; text-decoration: none; text-transform: uppercase;
+            transition: 0.3s;
         }
-        
-        /* SECCIÓN DE ARTÍCULOS AL FINAL */
-        .articulos-seccion { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
-        .articulos-seccion h2 { font-family: 'Orbitron'; text-align: center; color: var(--ven-yellow); margin-bottom: 30px; }
-        .grid-articulos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card-articulo { background: #0c1427; border: 1px solid #1e2a4a; border-radius: 12px; padding: 25px; transition: 0.3s; }
-        .card-articulo:hover { border-color: var(--ven-blue); background: #111b35; transform: scale(1.02); }
-        .card-articulo h3 { color: var(--ven-yellow); font-size: 1.1rem; margin-top: 0; }
-        .card-articulo p { font-size: 0.9rem; color: #aaa; }
-        .btn-leer { color: var(--ven-blue); font-weight: bold; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; }
+        .btn-sellar {
+            display: block; background: var(--inh-green); color: #fff;
+            text-align: center; padding: 15px; border-radius: 5px;
+            text-decoration: none; font-weight: 900; margin-top: 10px;
+        }
 
-        footer { text-align: center; padding: 40px; background: #000; font-size: 0.8rem; opacity: 0.6; }
+        /* SECCIÓN DE ARTÍCULOS */
+        .articulos-seccion { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+        .articulos-seccion h2 { text-align: center; color: var(--inh-dark-green); font-weight: 900; margin-bottom: 30px; border-bottom: 2px solid var(--inh-gold); display: inline-block; width: 100%; padding-bottom: 10px; }
+        
+        .grid-articulos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .card-articulo { background: var(--white); border-left: 5px solid var(--inh-gold); padding: 20px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .card-articulo h3 { color: var(--inh-dark-green); margin-top: 0; font-size: 1.2rem; }
+        .card-articulo p { font-size: 0.9rem; color: #555; }
+        .btn-leer { color: var(--inh-green); font-weight: bold; text-decoration: none; font-size: 0.85rem; }
+
+        footer { text-align: center; padding: 30px; background: var(--inh-dark-green); color: var(--white); font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <header>
     <div class="logo-container">
-        <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/superhipicos-logo.jpg" alt="Super Hípicos - Mejores Datos Hípicos de Venezuela">
+        <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/superhipicos-logo.jpg" alt="Super Hípicos">
     </div>
-    <div id="fecha-hoy" style="font-family: 'Orbitron'; color: var(--ven-yellow); margin-bottom: 10px; margin-top: 15px;"></div>
-    <h1 class="hero-title">Los Mejores <span>Datos Hípicos</span></h1>
-    <a href="https://t.me/TuCanalSuperHipicos" class="btn-main" rel="nofollow">🚀 ÚNETE AL TELEGRAM VIP</a>
+    <h1 class="hero-title">Centro de Pronósticos Nacional</h1>
+    <div id="fecha-hoy">Cargando fecha...</div>
+    <a href="https://t.me/TuCanalSuperHipicos" class="btn-main">🚀 UNIRSE AL TELEGRAM OFICIAL</a>
 </header>
 
 <div class="ticker">
     <div class="ticker-content">
-        <span class="ticker-item">🔥 LA RINCONADA: ¡Ganó el 1er Fijo! Paga: Bs. 85.30</span>
-        <span class="ticker-item">🏆 VALENCIA: ¡Cuadro con 6 aciertos detectado!</span>
-        <span class="ticker-item">⭐ GULFSTREAM: Trifecta acertada en la 3era</span>
-        <span class="ticker-item">📊 5y6 NACIONAL: ¡Acertamos la línea de la 5ta válida!</span>
+        <span class="ticker-item">🏁 LA RINCONADA: RECUERDA SELLAR TU 5Y6 ANTES DE LA 1RA VALIDA</span>
+        <span class="ticker-item">🏆 RESULTADO: GANÓ EL 2 EN LA 4TA (PAGÓ BS. 90.00)</span>
+        <span class="ticker-item">💎 DATO VIP: ACTIVATE EN TELEGRAM PARA EL CIERRE</span>
     </div>
 </div>
 
 <main>
     <section class="pronosticos-wrapper">
         <div class="card-pronostico">
-            <div class="card-header h-rojo">📍 EL DATO DE CIERRE</div>
-            <div class="card-body">
-                <span class="fijo-tag">LA RINCONADA - 10MA CARRERA</span>
-                <div class="fijo-num">#2</div>
-                <div class="fijo-name">MI QUERIDA EMMA</div>
-                <p class="fijo-desc">
-                    "Es la velocidad de la carrera. Sus aprontes indican que está lista para ganar de punta a punta en esta distancia."
-                </p>
-            </div>
-        </div>
-
-        <div class="card-pronostico">
-            <div class="card-header h-azul">🇻🇪 CUADRO SUGERIDO 5Y6</div>
+            <div class="card-header h-5y6">🇻🇪 5 Y 6 NACIONAL - LA RINCONADA</div>
             <div class="card-body">
                 <div class="grid-5y6">
                     <div class="v-box"><span class="v-label">1V:</span> <span>(4) - (2) - (13)</span></div>
                     <div class="v-box"><span class="v-label">2V:</span> <span>(9) - (4) - (7)</span></div>
-                    <div class="v-box"><span class="v-label">3V:</span> <span class="v-linea">LÍNEA (10)</span></div>
-                    <div class="v-box"><span class="v-label">4V:</span> <span>(6) - (2)</span></div>
-                    <div class="v-box"><span class="v-label">5V:</span> <span class="v-linea">LÍNEA (8)</span></div>
-                    <div class="v-box"><span class="v-label">6V:</span> <span>(13) - (11) - (1)</span></div>
+                    <div class="v-box"><span class="v-label">3V:</span> <span class="v-linea">(10) LÍNEA</span></div>
+                    <div class="v-box"><span class="v-label">4V:</span> <span>(6) - (2) - (1)</span></div>
+                    <div class="v-box"><span class="v-label">5V:</span> <span class="v-linea">(8) LÍNEA</span></div>
+                    <div class="v-box"><span class="v-label">6V:</span> <span>(13) - (11) - (7)</span></div>
                 </div>
-                <a href="#" class="btn-sellar">🏇 SELLAR CUADRO AQUÍ</a>
+                <a href="#" class="btn-sellar">🏇 SELLAR 5Y6 AQUÍ</a>
+                <p style="font-size: 0.7rem; color: #888; margin-top: 10px;">Código Promocional: <b>ttrqqw5zi</b></p>
+            </div>
+        </div>
+
+        <div class="card-pronostico">
+            <div class="card-header h-fijo">🚀 FIJO USA</div>
+            <div class="card-body">
+                <div style="font-size: 0.9rem; font-weight: bold; color: #d32f2f;">WILL ROGERS DOWNS / CARRERA 6</div>
+                <div style="font-size: 2rem; font-weight: 900; margin: 10px 0;">2 BUSINESS AS USUAL</div>
+                <p style="font-style: italic; color: #666; font-size: 0.9rem; border-top: 1px solid #eee; padding-top: 10px;">
+                    "Ejemplar con excelente video, baja de lote y monta de primera. Es la jugada de seguridad para hoy."
+                </p>
             </div>
         </div>
     </section>
 
     <section class="articulos-seccion">
-        <h2>CENTRO DE INFORMACIÓN</h2>
+        <h2>CENTRO DE INFORMACIÓN HÍPICA</h2>
         <div class="grid-articulos">
             <div class="card-articulo">
                 <h3>Marcas Hípicas</h3>
-                <p>Análisis detallado de los favoritos para cada carrera del fin de semana.</p>
-                <a href="#" class="btn-leer">Consultar Marcas →</a>
+                <p>Análisis de los favoritos para la jornada de La Rinconada.</p>
+                <a href="#" class="btn-leer">LEER MÁS →</a>
             </div>
             <div class="card-articulo">
                 <h3>Retrospectos Hípicos</h3>
-                <p>Descarga y revisa el historial de los ejemplares antes de sellar tu cuadro.</p>
-                <a href="#" class="btn-leer">Ver Historial →</a>
+                <p>Historial completo de los ejemplares de la semana.</p>
+                <a href="#" class="btn-leer">DESCARGAR PDF →</a>
             </div>
             <div class="card-articulo">
                 <h3>Carreras Americanas</h3>
-                <p>Toda la acción de los hipódromos de EE.UU. con datos en tiempo real.</p>
-                <a href="#" class="btn-leer">Ver Pronósticos →</a>
+                <p>Pronósticos diarios para los hipódromos de EE.UU.</p>
+                <a href="#" class="btn-leer">VER DATOS →</a>
             </div>
             <div class="card-articulo">
                 <h3>Gulfstream Park</h3>
-                <p>Marcas exclusivas para el hipódromo de la Florida y sus mejores apuestas.</p>
-                <a href="#" class="btn-leer">Ver Marcas Florida →</a>
+                <p>Información de primera para el meeting de Florida.</p>
+                <a href="#" class="btn-leer">VER MARCAS →</a>
             </div>
             <div class="card-articulo">
                 <h3>Datos de Parley</h3>
-                <p>Nuestra selección diaria para que ganes en grande con los deportes.</p>
-                <a href="#" class="btn-leer">Ver Jugada →</a>
+                <p>Selección de logros para MLB, NBA y Fútbol.</p>
+                <a href="#" class="btn-leer">VER JUGADA →</a>
             </div>
             <div class="card-articulo">
                 <h3>Guía de Apuestas</h3>
-                <p>Aprende cómo jugar y ganar en las principales taquillas hípicas.</p>
-                <a href="#" class="btn-leer">Leer Guía →</a>
+                <p>Tutoriales para nuevos jugadores del 5y6.</p>
+                <a href="#" class="btn-leer">VER GUÍA →</a>
             </div>
         </div>
     </section>
 </main>
 
 <footer>
-    <p>© 2026 superhipicos.com.ve - Especialistas en datos hípicos.</p>
+    <p>© 2026 superhipicos.com.ve | Datos para mayores de 18 años.</p>
+    <p>Hipismo Venezolano - Orgullo Nacional</p>
 </footer>
 
 <script>
-    const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const opciones = { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' };
     document.getElementById('fecha-hoy').innerText = new Date().toLocaleDateString('es-ES', opciones).toUpperCase();
 </script>
 
