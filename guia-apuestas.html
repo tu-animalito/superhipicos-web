@@ -16,7 +16,7 @@
             --white: #ffffff;
         }
 
-        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg-light); color: #333; line-height: 1.8; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg-light); color: #333; line-height: 1.8; width: 100%; overflow-x: hidden; }
         p, ul li { text-align: justify; }
 
         header { 
@@ -26,18 +26,34 @@
         }
         .logo-small img { max-width: 150px; height: auto; }
 
-        .article-container { max-width: 900px; margin: 40px auto; padding: 0 20px; background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+        /* AJUSTE PARA ANCHO COMPLETO */
+        .article-container { 
+            max-width: 100%; 
+            width: 100%; 
+            margin: 0 auto; 
+            background: var(--white); 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+            overflow: hidden; 
+        }
         
+        @media (min-width: 900px) {
+            .article-container { width: 900px; margin: 40px auto; border-radius: 12px; }
+        }
+
         .hero-img { width: 100%; height: auto; display: block; }
         
-        .content-padding { padding: 40px; }
+        /* AJUSTE DE PADDING PARA MÓVILES */
+        .content-padding { padding: 25px 15px; }
+        @media (min-width: 600px) { .content-padding { padding: 40px; } }
 
-        h1 { font-family: 'Orbitron', sans-serif; color: #1a1a1a; font-size: 2rem; margin-bottom: 25px; text-align: center; }
-        h2 { border-bottom: 3px solid var(--inh-gold); display: inline-block; padding-bottom: 5px; margin-top: 40px; }
+        h1 { font-family: 'Orbitron', sans-serif; color: #1a1a1a; font-size: 1.8rem; margin-bottom: 25px; text-align: center; }
+        @media (min-width: 600px) { h1 { font-size: 2rem; } }
 
-        /* SECCIONES DIFERENCIADAS */
-        .guia-nacional { border-left: 8px solid var(--inh-green); background: #f1f8f1; padding: 25px; border-radius: 0 12px 12px 0; margin: 20px 0; }
-        .guia-americana { border-left: 8px solid var(--usa-blue); background: #f0f4f8; padding: 25px; border-radius: 0 12px 12px 0; margin: 20px 0; }
+        h2 { border-bottom: 3px solid var(--inh-gold); display: inline-block; padding-bottom: 5px; margin-top: 40px; font-size: 1.4rem; }
+
+        /* SECCIONES DIFERENCIADAS ADAPTABLES */
+        .guia-nacional { border-left: 8px solid var(--inh-green); background: #f1f8f1; padding: 20px; border-radius: 0 12px 12px 0; margin: 20px 0; }
+        .guia-americana { border-left: 8px solid var(--usa-blue); background: #f0f4f8; padding: 20px; border-radius: 0 12px 12px 0; margin: 20px 0; }
 
         .badge-nacional { background: var(--inh-green); color: white; padding: 5px 12px; border-radius: 4px; font-weight: bold; }
         .badge-americana { background: var(--usa-blue); color: white; padding: 5px 12px; border-radius: 4px; font-weight: bold; }
@@ -103,7 +119,7 @@
         </div>
 
         <center>
-            <a href="/" class="back-link">← VOLVER AL CENTRO DE PRONÓSTICOS</a>
+            <a href="/" class="back-link">← VOLVER AL INICIO</a>
         </center>
     </div>
 </div>
@@ -115,4 +131,3 @@
 
 </body>
 </html>
-
