@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -15,12 +15,48 @@
             --bg-light: #f4f7f6;
             --text-dark: #222;
             --white: #ffffff;
+            --accent-blue: #00bcd4;
         }
 
-        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+        /* EFECTO DE MOVIMIENTO DE FONDO (ESTILO VÍDEO) */
+        body { 
+            margin: 0; 
+            font-family: 'Roboto', sans-serif; 
+            color: var(--text-dark); 
+            line-height: 1.6;
+            background: linear-gradient(-45deg, #f4f7f6, #e0f2f1, #e8f5e9, #f1f8e9);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* PARTÍCULAS FLOTANTES DISCRETAS */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(var(--accent-blue) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.1;
+            z-index: -1;
+            animation: moveParticles 20s linear infinite;
+        }
+
+        @keyframes moveParticles {
+            from { transform: translateY(0); }
+            to { transform: translateY(-50px); }
+        }
         
         header { 
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
             text-align: center; padding: 30px 20px; 
             border-bottom: 5px solid var(--inh-green);
         }
@@ -37,12 +73,12 @@
         .main-container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
 
         /* SECCIÓN FIJO DEL DÍA */
-        .fijo-container { background: var(--white); border-radius: 8px; border: 1px solid #ddd; margin-bottom: 30px; overflow: hidden; }
+        .fijo-container { background: var(--white); border-radius: 8px; border: 1px solid #ddd; margin-bottom: 30px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .fijo-header { background: #d32f2f; color: #fff; padding: 15px; text-align: center; font-weight: 900; text-transform: uppercase; }
         .fijo-body { padding: 30px; text-align: center; }
 
-        /* SECCIÓN CONSENSO EXPERTOS MEJORADA */
-        .consenso-wrapper { background: var(--inh-green); border-radius: 12px; padding: 20px; color: white; margin-bottom: 30px; }
+        /* SECCIÓN CONSENSO EXPERTOS */
+        .consenso-wrapper { background: var(--inh-green); border-radius: 12px; padding: 20px; color: white; margin-bottom: 30px; box-shadow: 0 10px 25px rgba(45, 128, 51, 0.2); }
         .consenso-header { text-align: center; margin-bottom: 20px; border-bottom: 2px solid rgba(255,255,255,0.2); padding-bottom: 10px; }
         .experto-row { background: white; color: #333; border-radius: 8px; padding: 15px; margin-bottom: 10px; border-left: 5px solid var(--inh-gold); }
         .experto-name { color: var(--inh-dark-green); font-weight: 900; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
@@ -54,7 +90,7 @@
         .extra-label { display: block; color: var(--inh-gold); font-weight: 900; font-size: 0.75rem; text-transform: uppercase; }
 
         /* SECCIÓN CUADRO 5Y6 */
-        .card-5y6 { background: var(--white); border-radius: 12px; border: 2px solid var(--inh-green); margin-bottom: 30px; overflow: hidden; }
+        .card-5y6 { background: var(--white); border-radius: 12px; border: 2px solid var(--inh-green); margin-bottom: 30px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .header-5y6-img { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 15px; background: #f9f9f9; border-bottom: 1px solid #eee; }
         .header-5y6-img img { height: 45px; }
         .titulo-cuadro { background: var(--inh-green); color: white; text-align: center; padding: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
@@ -63,27 +99,61 @@
         .v-label { font-weight: 900; color: var(--inh-dark-green); }
         .v-linea { font-weight: 900; color: var(--inh-green); }
 
-        /* TEXTO SEO ESTRATÉGICO */
-        .seo-text-block { background: #fff; padding: 30px; border-radius: 8px; margin: 30px 0; border: 1px solid #ddd; border-left: 5px solid var(--inh-gold); text-align: justify; }
+        /* TEXTO SEO */
+        .seo-text-block { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(5px); padding: 30px; border-radius: 8px; margin: 30px 0; border: 1px solid #ddd; border-left: 5px solid var(--inh-gold); text-align: justify; }
         .seo-text-block h2 { color: var(--inh-dark-green); margin-top: 0; }
 
-        /* SECCIÓN ARTÍCULOS */
+        /* SECCIÓN ARTÍCULOS ESTILO IMÁGENES */
         .articulos-seccion { margin-top: 50px; text-align: center; }
-        .articulos-banner { max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 30px; }
-        .grid-articulos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 30px; }
-        .card-articulo { background: var(--white); border-left: 5px solid var(--inh-gold); padding: 20px; border-radius: 4px; text-align: left; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .grid-articulos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
+        
+        .card-articulo { 
+            background: var(--white); 
+            border-radius: 12px; 
+            text-align: left; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-articulo:hover { transform: translateY(-10px); }
+
+        .art-img-container { width: 100%; height: 180px; position: relative; overflow: hidden; }
+        .art-img-container img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .badge-cat { 
+            position: absolute; top: 15px; left: 15px; 
+            background: #24A1DE; color: white; 
+            font-size: 0.7rem; padding: 4px 10px; 
+            border-radius: 4px; font-weight: bold; text-transform: uppercase;
+        }
+        .badge-cat.nacional { background: #d32f2f; }
+        .badge-cat.inter { background: #0d47a1; }
+
+        .art-content { padding: 20px; flex-grow: 1; }
+        .art-content h3 { margin: 0 0 10px; font-size: 1.1rem; color: #222; line-height: 1.4; }
+        .art-content h3 a { text-decoration: none; color: inherit; }
+        .art-content h3 a:hover { color: var(--inh-green); }
+
+        .art-footer { 
+            padding: 15px 20px; border-top: 1px solid #eee; 
+            display: flex; align-items: center; font-size: 0.8rem; color: #777; 
+        }
+        .author-avatar { width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; background: #eee; }
 
         .btn-main { 
             display: inline-block; background: #24A1DE; color: white; padding: 15px 30px; 
             border-radius: 50px; font-weight: 900; text-decoration: none; text-transform: uppercase;
-            margin: 20px 0; transition: 0.3s; box-shadow: 0 4px 15px rgba(36, 161, 222, 0.3);
+            margin: 20px 0; transition: 0.3s; box-shadow: 0 4px 15px rgba(36, 161, 222, 0.4);
+            border: none; cursor: pointer;
         }
         .btn-sellar { display: block; background: var(--inh-green); color: #fff; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: 900; margin: 0 20px 20px; }
         
-        footer { padding: 40px 20px; background: var(--inh-dark-green); color: var(--white); text-align: center; }
+        footer { padding: 40px 20px; background: #111; color: var(--white); text-align: center; }
         .footer-links { margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
         .footer-links a { color: var(--inh-gold); text-decoration: none; font-weight: bold; font-size: 0.9rem; }
-        .footer-legal { font-size: 0.75rem; color: #ccc; max-width: 800px; margin: 20px auto; }
+        .footer-legal { font-size: 0.75rem; color: #888; max-width: 800px; margin: 20px auto; }
     </style>
 </head>
 <body>
@@ -118,11 +188,6 @@
         </div>
     </section>
 
-    <article class="seo-text-block">
-        <h2>¿Buscas los mejores datos hípicos para hoy?</h2>
-        <p>En <strong>Super Hípicos</strong> nos especializamos en ofrecer información precisa para los hipódromos nacionales e internacionales. Nuestros <strong>datos hípicos</strong> se basan en un análisis profundo de los retrospectos, condiciones de pista y reportes de cancha de última hora.</p>
-    </article>
-
     <section class="consenso-wrapper">
         <div class="consenso-header">
             <h3 style="margin:0; font-family: 'Orbitron';">🇻🇪 CONSENSO DE EXPERTOS 🇻🇪</h3>
@@ -138,25 +203,11 @@
             <div class="experto-name">JOSÉ LUIS DANGELO <span class="experto-fijo">FIJO: 1V: 4 (Light Star)</span></div>
             <div class="experto-marcas">1C: 1F / 2C: 3-4 / 3C: 1-6-8 / 4C: 1-5 / 5C: 4F / 6C: 4-9-7-3</div>
         </div>
-        
-        <div class="experto-row">
-            <div class="experto-name">MÁSTER HÍPICO <span class="experto-fijo">FIJO: 3V: 10 (Baco)</span></div>
-            <div class="experto-marcas">1C: 1F / 2C: 3-1 / 3C: 6-8-1 / 4C: 5-1 / 5C: 2-4-5 / 6C: 4-9-7</div>
-        </div>
 
         <div class="consenso-extras">
-            <div class="extra-item">
-                <span class="extra-label">⭐ LÍNEA NACIONAL</span>
-                <b>3ra Válida: (10) BACO</b>
-            </div>
-            <div class="extra-item">
-                <span class="extra-label">⚡ MEJOR TRABAJO</span>
-                <b>5ta Válida: (4) THE QUEEN Z</b>
-            </div>
-            <div class="extra-item">
-                <span class="extra-label">🏁 FIJO DE CIERRE</span>
-                <b>6ta Válida: (13) MI QUERIDA EMMA</b>
-            </div>
+            <div class="extra-item"><span class="extra-label">⭐ LÍNEA NACIONAL</span><b>3ra Válida: (10) BACO</b></div>
+            <div class="extra-item"><span class="extra-label">⚡ MEJOR TRABAJO</span><b>5ta Válida: (4) THE QUEEN Z</b></div>
+            <div class="extra-item"><span class="extra-label">🏁 FIJO DE CIERRE</span><b>6ta Válida: (13) MI QUERIDA EMMA</b></div>
         </div>
     </section>
 
@@ -175,47 +226,52 @@
             <div class="v-box"><span class="v-label">6V:</span> <span>(13) - (11) - (7)</span></div>
         </div>
         <a href="#" class="btn-sellar">🏇 SELLAR CUADRO AQUÍ</a>
-        <center><p style="font-size: 0.75rem; color: #888;">CÓDIGO PROMO: <b style="color:#d32f2f">ttrqqw5zi</b></p></center>
     </section>
 
-    <article class="seo-text-block">
-        <h2>Pronósticos para el 5y6 Nacional de La Rinconada</h2>
-        <p>El <strong>5y6 nacional</strong> es el juego preferido de la afición venezolana. Aquí te brindamos las mejores marcas hípicas y líneas para orientar tu jugada. Recuerda que la información de cierre es vital para identificar a los ejemplares con mejor oportunidad en el Hipódromo La Rinconada.</p>
-    </article>
-
     <section class="articulos-seccion">
-        <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/caballo-corriendo.gif" alt="Hipismo" class="articulos-banner">
+        <h2 style="font-family: 'Orbitron'; color: var(--inh-dark-green);">Últimas Publicaciones</h2>
         
         <div class="grid-articulos">
             <div class="card-articulo">
-                <h3>Marcas Hípicas</h3>
-                <p>Favoritos y análisis de última hora para La Rinconada.</p>
-                <a href="#" style="color:var(--inh-green); font-weight:bold; text-decoration:none;">LEER MÁS →</a>
+                <div class="art-img-container">
+                    <span class="badge-cat nacional">Nacionales</span>
+                    <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/retrospectos-rinconada.jpg" alt="Retrospectos">
+                </div>
+                <div class="art-content">
+                    <h3><a href="retrospectos.html">Retrospectos La Rinconada: Descarga la Gaceta [25 de Enero 2026]</a></h3>
+                </div>
+                <div class="art-footer">
+                    <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/avatar-junior.jpg" class="author-avatar" alt="Junior">
+                    <span>Junior Bets • enero 21, 2026</span>
+                </div>
             </div>
+
             <div class="card-articulo">
-                <h3>Retrospectos</h3>
-                <p>Descarga la revista oficial con el historial completo.</p>
-                <a href="#" style="color:var(--inh-green); font-weight:bold; text-decoration:none;">DESCARGAR →</a>
+                <div class="art-img-container">
+                    <span class="badge-cat inter">Internacional</span>
+                    <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/datos-gulfstream-park.webp" alt="Gulfstream">
+                </div>
+                <div class="art-content">
+                    <h3><a href="gulfstream-park.html">Pronósticos Gulfstream Park: Datos, fijos y marcas [18 de Enero]</a></h3>
+                </div>
+                <div class="art-footer">
+                    <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/avatar-junior.jpg" class="author-avatar" alt="Junior">
+                    <span>Junior Bets • enero 18, 2026</span>
+                </div>
             </div>
+
             <div class="card-articulo">
-                <h3>Carreras Americanas</h3>
-                <p>Pronósticos diarios para los hipódromos de EE.UU.</p>
-                <a href="#" style="color:var(--inh-green); font-weight:bold; text-decoration:none;">VER DATOS →</a>
-            </div>
-            <div class="card-articulo">
-                <h3>Gulfstream Park</h3>
-                <p>Información de primera para el meeting de Florida.</p>
-                <a href="#" style="color:var(--inh-green); font-weight:bold; text-decoration:none;">VER MARCAS →</a>
-            </div>
-            <div class="card-articulo">
-                <h3>Datos de Parley</h3>
-                <p>Nuestra selección de logros para MLB, NBA y Fútbol.</p>
-                <a href="#" style="color:var(--inh-green); font-weight:bold; text-decoration:none;">VER JUGADA →</a>
-            </div>
-            <div class="card-articulo">
-                <h3>Guía de Apuestas</h3>
-                <p>Tutoriales para nuevos jugadores y cálculo de cuadros.</p>
-                <a href="#" style="color:var(--inh-green); font-weight:bold; text-decoration:none;">VER GUÍA →</a>
+                <div class="art-img-container">
+                    <span class="badge-cat inter">Deportes</span>
+                    <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/datos-parley-gratis.webp" alt="Parley">
+                </div>
+                <div class="art-content">
+                    <h3><a href="parley.html">Datos de Parley Gratis: Logros y Pronósticos para hoy</a></h3>
+                </div>
+                <div class="art-footer">
+                    <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/avatar-junior.jpg" class="author-avatar" alt="Junior">
+                    <span>Junior Bets • enero 18, 2026</span>
+                </div>
             </div>
         </div>
     </section>
@@ -224,15 +280,11 @@
 
 <footer>
     <div class="footer-links">
-        <a href="#">QUIENES SOMOS</a>
+        <a href="quienes-somos.html">QUIENES SOMOS</a>
         <a href="#">AVISO LEGAL</a>
-        <a href="#">POLÍTICA DE PRIVACIDAD</a>
         <a href="#">CONTACTO</a>
     </div>
-    <p>© 2026 superhipicos.com.ve | Hipismo Venezolano - Orgullo Nacional</p>
-    <div class="footer-legal">
-        <strong>Aviso Legal:</strong> La información y los datos hípicos publicados en este sitio tienen carácter meramente informativo. El juego de azar es solo para mayores de 18 años. Super Hípicos promueve el juego responsable y no se hace responsable de las pérdidas económicas derivadas del uso de estos pronósticos.
-    </div>
+    <p>© 2026 superhipicos.com.ve</p>
 </footer>
 
 <script>
@@ -241,5 +293,5 @@
 </script>
 
 </body>
-            </html>
-                    
+                                                                </html>
+                                                                
