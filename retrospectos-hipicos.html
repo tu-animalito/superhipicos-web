@@ -17,7 +17,7 @@
             --white: #ffffff;
         }
 
-        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.8; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.8; width: 100%; overflow-x: hidden; }
         
         header { 
             background: var(--white);
@@ -26,13 +26,29 @@
         }
         .logo-small img { max-width: 150px; height: auto; }
 
-        .article-container { max-width: 850px; margin: 40px auto; padding: 0 20px; background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+        /* AJUSTE PARA ANCHO COMPLETO ADAPTABLE */
+        .article-container { 
+            max-width: 100%; 
+            width: 100%; 
+            margin: 0 auto; 
+            background: var(--white); 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+            overflow: hidden; 
+        }
+        
+        @media (min-width: 850px) {
+            .article-container { width: 850px; margin: 40px auto; border-radius: 12px; }
+        }
         
         .article-header-img { width: 100%; height: auto; display: block; }
         
-        .content-padding { padding: 40px; }
+        /* AJUSTE DE PADDING PARA MÓVILES */
+        .content-padding { padding: 25px 15px; }
+        @media (min-width: 600px) { .content-padding { padding: 40px; } }
 
-        h1 { font-family: 'Orbitron', sans-serif; color: var(--inh-dark-green); font-size: 1.8rem; line-height: 1.2; margin-bottom: 25px; text-align: center; }
+        h1 { font-family: 'Orbitron', sans-serif; color: var(--inh-dark-green); font-size: 1.6rem; line-height: 1.2; margin-bottom: 25px; text-align: center; }
+        @media (min-width: 600px) { h1 { font-size: 1.8rem; } }
+
         h2 { color: var(--inh-dark-green); border-left: 5px solid var(--inh-gold); padding-left: 15px; margin-top: 40px; }
 
         p { margin-bottom: 20px; text-align: justify; color: #444; }
