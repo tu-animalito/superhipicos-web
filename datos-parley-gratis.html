@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,7 @@
             --white: #ffffff;
         }
 
-        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg-light); color: #333; line-height: 1.8; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg-light); color: #333; line-height: 1.8; width: 100%; overflow-x: hidden; }
         p, ul li { text-align: justify; }
 
         header { 
@@ -26,32 +26,56 @@
         }
         .logo-small img { max-width: 150px; height: auto; }
 
-        .article-container { max-width: 900px; margin: 40px auto; padding: 0 20px; background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+        /* AJUSTE PARA ANCHO COMPLETO ADAPTABLE */
+        .article-container { 
+            max-width: 100%; 
+            width: 100%; 
+            margin: 0 auto; 
+            background: var(--white); 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+            overflow: hidden; 
+        }
+        
+        @media (min-width: 900px) {
+            .article-container { width: 900px; margin: 40px auto; border-radius: 12px; }
+        }
         
         .hero-img { width: 100%; height: auto; display: block; }
         
-        .content-padding { padding: 40px; }
+        /* AJUSTE DE PADDING PARA MÓVILES */
+        .content-padding { padding: 25px 15px; }
+        @media (min-width: 600px) { .content-padding { padding: 40px; } }
 
-        h1 { font-family: 'Orbitron', sans-serif; color: var(--parley-blue); font-size: 1.8rem; margin-bottom: 25px; text-align: center; }
+        h1 { font-family: 'Orbitron', sans-serif; color: var(--parley-blue); font-size: 1.6rem; margin-bottom: 25px; text-align: center; }
+        @media (min-width: 600px) { h1 { font-size: 1.8rem; } }
+
         h2 { color: var(--parley-blue); border-left: 5px solid var(--parley-gold); padding-left: 15px; margin-top: 40px; }
 
-        /* TICKET DE PARLEY DINÁMICO */
+        /* TICKET DE PARLEY DINÁMICO ADAPTABLE */
         .ticket-wrapper { 
-            background: #1a1a1a; color: white; border-radius: 15px; padding: 25px; 
+            background: #1a1a1a; color: white; border-radius: 15px; padding: 20px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin: 30px 0; border: 2px solid var(--parley-gold);
         }
+        @media (min-width: 600px) { .ticket-wrapper { padding: 25px; } }
+
         .ticket-header { text-align: center; border-bottom: 1px dashed #555; padding-bottom: 15px; margin-bottom: 20px; }
         .ticket-item { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; background: #262626; padding: 10px; border-radius: 8px; }
-        .league-logo { width: 40px; height: 40px; margin-right: 15px; }
-        .bet-info { flex-grow: 1; }
-        .odds { color: var(--parley-gold); font-weight: 900; font-size: 1.2rem; }
+        .league-logo { width: 35px; height: 35px; margin-right: 12px; }
+        @media (min-width: 600px) { .league-logo { width: 40px; height: 40px; margin-right: 15px; } }
+
+        .bet-info { flex-grow: 1; font-size: 0.9rem; }
+        @media (min-width: 600px) { .bet-info { font-size: 1rem; } }
+
+        .odds { color: var(--parley-gold); font-weight: 900; font-size: 1.1rem; }
+        @media (min-width: 600px) { .odds { font-size: 1.2rem; } }
         
         .total-box { background: var(--parley-green); padding: 15px; border-radius: 8px; text-align: center; margin-top: 20px; }
-        .return-amount { font-size: 1.5rem; font-weight: 900; color: white; }
+        .return-amount { font-size: 1.3rem; font-weight: 900; color: white; }
+        @media (min-width: 600px) { .return-amount { font-size: 1.5rem; } }
 
         .btn-melbet { 
             display: block; background: #fb8c00; color: #000; text-align: center; padding: 15px; 
-            border-radius: 8px; text-decoration: none; font-weight: 900; margin-top: 20px; text-transform: uppercase;
+            border-radius: 8px; text-decoration: none; font-weight: 900; margin-top: 20px; text-transform: uppercase; font-size: 0.9rem;
         }
 
         footer { text-align: center; padding: 40px 20px; background: var(--parley-blue); color: white; margin-top: 50px; }
@@ -79,7 +103,7 @@
         <div class="ticket-wrapper">
             <div class="ticket-header">
                 <h3 style="margin:0; color:var(--parley-gold);">🎫 TICKET DEL DÍA</h3>
-                <small id="current-date">Viernes, 23 de Enero de 2026</small>
+                <small id="current-date">Sábado, 24 de Enero de 2026</small>
             </div>
 
             <div class="ticket-item">
@@ -109,7 +133,7 @@
         </div>
 
         <h2>📊 Análisis Estratégico del Parley</h2>
-        <p>Si buscas rentabilizar tus apuestas este 23 de enero de 2026, nuestros expertos han analizado la pizarra para traerte las mejores oportunidades:</p>
+        <p>Si buscas rentabilizar tus apuestas este 24 de enero de 2026, nuestros expertos han analizado la pizarra para traerte las mejores oportunidades:</p>
         
         <ul>
             <li><strong>Los Ángeles Rams / Alta 48:</strong> El Over se ha dado en los últimos 7 juegos de los Rams de forma consecutiva. Stafford domina bajo presión y el clima no será factor.</li>
@@ -133,7 +157,6 @@
 </footer>
 
 <script>
-    // Script simple para cálculos si decides agregar un input de apuesta en el futuro
     const cuota1 = 1.70;
     const cuota2 = 1.91;
     const multiplicador = (cuota1 * cuota2).toFixed(2);
