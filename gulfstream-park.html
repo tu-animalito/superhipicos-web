@@ -16,7 +16,7 @@
             --white: #ffffff;
         }
 
-        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg-light); color: #333; line-height: 1.8; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg-light); color: #333; line-height: 1.8; width: 100%; overflow-x: hidden; }
         p, ul li { text-align: justify; }
 
         header { 
@@ -26,13 +26,29 @@
         }
         .logo-small img { max-width: 150px; height: auto; }
 
-        .article-container { max-width: 900px; margin: 40px auto; padding: 0 20px; background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+        /* AJUSTE PARA ANCHO COMPLETO ADAPTABLE */
+        .article-container { 
+            max-width: 100%; 
+            width: 100%; 
+            margin: 0 auto; 
+            background: var(--white); 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+            overflow: hidden; 
+        }
+        
+        @media (min-width: 900px) {
+            .article-container { width: 900px; margin: 40px auto; border-radius: 12px; }
+        }
         
         .hero-img { width: 100%; height: auto; display: block; }
         
-        .content-padding { padding: 40px; }
+        /* AJUSTE DE PADDING PARA MÓVILES */
+        .content-padding { padding: 25px 15px; }
+        @media (min-width: 600px) { .content-padding { padding: 40px; } }
 
-        h1 { font-family: 'Orbitron', sans-serif; color: var(--gp-blue); font-size: 1.8rem; margin-bottom: 25px; text-align: center; }
+        h1 { font-family: 'Orbitron', sans-serif; color: var(--gp-blue); font-size: 1.6rem; margin-bottom: 25px; text-align: center; }
+        @media (min-width: 600px) { h1 { font-size: 1.8rem; } }
+
         h2 { color: var(--gp-blue); border-left: 5px solid var(--gp-gold); padding-left: 15px; margin-top: 40px; }
 
         /* SECCIÓN DE PRONÓSTICOS ESTILO GACETA */
@@ -42,16 +58,17 @@
             width: 100%; border-collapse: collapse; background: #fff; 
             border: 2px solid #ddd; border-radius: 8px; overflow: hidden; margin-bottom: 30px;
         }
-        .tabla-marcas th { background: var(--gp-blue); color: white; padding: 15px; text-transform: uppercase; font-family: 'Orbitron', sans-serif; }
-        .tabla-marcas td { padding: 12px 15px; border-bottom: 1px solid #eee; font-weight: 700; }
-        .race-num { color: var(--gp-blue); font-weight: 900; width: 30%; }
-        .race-picks { color: #222; font-size: 1.1rem; }
-        .fijo-tag { background: var(--gp-red); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-left: 10px; }
+        .tabla-marcas th { background: var(--gp-blue); color: white; padding: 15px; text-transform: uppercase; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; }
+        .tabla-marcas td { padding: 12px 15px; border-bottom: 1px solid #eee; font-weight: 700; font-size: 0.95rem; }
+        .race-num { color: var(--gp-blue); font-weight: 900; width: 35%; }
+        .race-picks { color: #222; }
+        .fijo-tag { background: var(--gp-red); color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; margin-left: 5px; vertical-align: middle; }
 
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; margin: 30px 0; border-radius: 8px; overflow: hidden; background: #000; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        .info-box { background: #eef2f7; padding: 25px; border-radius: 8px; border-top: 4px solid var(--gp-blue); margin: 30px 0; }
+        .info-box { background: #eef2f7; padding: 20px; border-radius: 8px; border-top: 4px solid var(--gp-blue); margin: 30px 0; }
+        @media (min-width: 600px) { .info-box { padding: 25px; } }
 
         footer { text-align: center; padding: 40px 20px; background: var(--gp-blue); color: white; margin-top: 50px; }
         .back-link { display: inline-block; margin-top: 20px; color: var(--gp-gold); text-decoration: none; font-weight: bold; }
@@ -141,7 +158,7 @@
         </p>
 
         <center>
-            <a href="carreras-americanas.html" class="back-link">← VOLVER A CARRERAS AMERICANAS</a>
+            <a href="/" class="back-link">← VOLVER AL INICIO</a>
         </center>
     </div>
 </div>
@@ -152,5 +169,4 @@
 </footer>
 
 </body>
-          </html>
-          
+</html>
