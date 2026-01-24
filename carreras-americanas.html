@@ -16,7 +16,7 @@
             --white: #ffffff;
         }
 
-        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg-light); color: #333; line-height: 1.8; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg-light); color: #333; line-height: 1.8; width: 100%; overflow-x: hidden; }
         
         header { 
             background: var(--white);
@@ -25,30 +25,52 @@
         }
         .logo-small img { max-width: 150px; height: auto; }
 
-        .article-container { max-width: 900px; margin: 40px auto; padding: 0 20px; background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+        /* AJUSTE PARA ANCHO COMPLETO ADAPTABLE */
+        .article-container { 
+            max-width: 100%; 
+            width: 100%; 
+            margin: 0 auto; 
+            background: var(--white); 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+            overflow: hidden; 
+        }
+        
+        @media (min-width: 900px) {
+            .article-container { width: 900px; margin: 40px auto; border-radius: 12px; }
+        }
         
         .hero-img { width: 100%; height: auto; display: block; }
         
-        .content-padding { padding: 40px; }
+        /* AJUSTE DE PADDING PARA MÓVILES */
+        .content-padding { padding: 25px 15px; }
+        @media (min-width: 600px) { .content-padding { padding: 40px; } }
 
-        h1 { font-family: 'Orbitron', sans-serif; color: var(--usa-blue); font-size: 1.8rem; margin-bottom: 25px; text-align: center; }
-        h2 { color: var(--usa-blue); border-left: 5px solid var(--usa-red); padding-left: 15px; margin-top: 40px; }
+        h1 { font-family: 'Orbitron', sans-serif; color: var(--usa-blue); font-size: 1.6rem; margin-bottom: 25px; text-align: center; }
+        @media (min-width: 600px) { h1 { font-size: 1.8rem; } }
 
-        /* JUSTIFICACIÓN DE TEXTO */
+        h2 { color: var(--usa-blue); border-left: 5px solid var(--usa-red); padding-left: 15px; margin-top: 40px; font-size: 1.4rem; }
+
         p, ul li { text-align: justify; }
 
-        /* SECCIÓN LO MÁS FIJO */
-        .fijo-box { background: #fff5f5; border: 2px solid var(--usa-red); border-radius: 12px; padding: 25px; margin: 30px 0; position: relative; }
-        .fijo-tag { position: absolute; top: -15px; right: 20px; background: var(--usa-red); color: white; padding: 5px 15px; font-weight: 900; border-radius: 5px; }
-        .fijo-title { font-size: 1.4rem; font-weight: 900; color: var(--usa-blue); display: block; margin-bottom: 10px; }
+        /* SECCIÓN LO MÁS FIJO ADAPTABLE */
+        .fijo-box { background: #fff5f5; border: 2px solid var(--usa-red); border-radius: 12px; padding: 20px; margin: 30px 0; position: relative; }
+        @media (min-width: 600px) { .fijo-box { padding: 25px; } }
+
+        .fijo-tag { position: absolute; top: -15px; right: 10px; background: var(--usa-red); color: white; padding: 4px 10px; font-weight: 900; border-radius: 5px; font-size: 0.8rem; }
+        @media (min-width: 600px) { .fijo-tag { right: 20px; font-size: 0.9rem; } }
+
+        .fijo-title { font-size: 1.2rem; font-weight: 900; color: var(--usa-blue); display: block; margin-bottom: 10px; }
         
         /* BOTONES HIPÓDROMOS */
-        .hipodromos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 30px 0; }
-        .btn-track { background: var(--usa-blue); color: white; text-align: center; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .hipodromos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 30px 0; }
+        @media (min-width: 600px) { .hipodromos-grid { grid-template-columns: repeat(4, 1fr); } }
+
+        .btn-track { background: var(--usa-blue); color: white; text-align: center; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; transition: 0.3s; font-size: 0.85rem; }
         .btn-track:hover { background: var(--usa-red); }
 
-        /* TABLA DE RESULTADOS */
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+        /* TABLA DE RESULTADOS ADAPTABLE */
+        .table-responsive { width: 100%; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85rem; min-width: 400px; }
         th { background: #eee; text-align: left; padding: 10px; }
         td { border-bottom: 1px solid #eee; padding: 10px; }
 
@@ -88,14 +110,14 @@
         </div>
 
         <div class="fijo-box">
-            <span class="fijo-tag">BEST BET (LO MÁS FIJO)</span>
+            <span class="fijo-tag">BEST BET</span>
             <span class="fijo-title">Gulfstream Park | Carrera 7</span>
             <h3 style="margin:0; color:var(--usa-red);">#2 SENZA PAROLE</h3>
             <p style="margin-top:15px; font-style: italic;">
-                "Senza Parole parece estar alcanzando su pico de condición justo a tiempo para este compromiso. Esta potranca ha demostrado un talento superior desde el inicio de su campaña y, por la forma en que viene trabajando, será sumamente difícil de derrotar en este lote."
+                "Senza Parole parece estar alcanzando su pico de condición justo a tiempo para este compromiso. Esta potranca ha demostrado un talento superior desde el inicio de su campaña y será sumamente difícil de derrotar."
             </p>
             <strong>Factor Clave:</strong> Madurez y talento joven.
-            <br><strong>Pronóstico:</strong> Favorita sólida para ganar.
+            <br><strong>Pronóstico:</strong> Favorita sólida.
         </div>
 
         <h2>📺 Resultado en Vídeo</h2>
@@ -104,47 +126,47 @@
         </div>
 
         <h2>📊 Historial de Fijos Recientes</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Ejemplar</th>
-                    <th>Pista</th>
-                    <th>Resultado</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>12/1</td>
-                    <td>#3 Henry Mac</td>
-                    <td>MV</td>
-                    <td>🥈</td>
-                </tr>
-                <tr>
-                    <td>10/1</td>
-                    <td>#2 Surf UP</td>
-                    <td>GP</td>
-                    <td>🏆 Ganó</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Ejemplar</th>
+                        <th>Pista</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12/1</td>
+                        <td>#3 Henry Mac</td>
+                        <td>MV</td>
+                        <td>🥈 Segundo</td>
+                    </tr>
+                    <tr>
+                        <td>10/1</td>
+                        <td>#2 Surf UP</td>
+                        <td>GP</td>
+                        <td>🏆 Ganó</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <h2>Sobre los Pronósticos</h2>
         <p>
-            Los pronósticos gratuitos de carreras de caballos pueden ser un valioso recurso para aquellos que buscan realizar las mejores apuestas posibles. Nuestros datos hípicos gratuitos y la mejor información a la que tenga acceso significa que podrá hacer mejores apuestas. No solo es dinero fácil, es una buena inversión que te ayudará a perfeccionar tus habilidades y ahorrar tiempo de investigación.
+            Los pronósticos gratuitos de carreras de caballos pueden ser un valioso recurso. Nuestros datos hípicos gratuitos significan que podrá hacer mejores apuestas, ahorrando tiempo de investigación y perfeccionando sus habilidades.
         </p>
 
-        <h2>Claves para Entender los Tipos de Carreras</h2>
-        <p>Conocer las diferentes categorías es fundamental para tomar decisiones informadas:</p>
+        <h2>Claves para Entender las Carreras</h2>
         <ul>
             <li><strong>Carreras de Maiden:</strong> Para caballos que nunca han ganado.</li>
-            <li><strong>Carreras de Reclamo (Claiming):</strong> Los caballos están disponibles para ser comprados por un precio fijo.</li>
-            <li><strong>Carreras de Stakes:</strong> Aquí compiten los mejores ejemplares con un ritmo más consistente.</li>
-            <li><strong>Carreras de Allowance:</strong> Oportunidad para ver estrellas que avanzan más allá de las de reclamo.</li>
+            <li><strong>Carreras de Reclamo (Claiming):</strong> Caballos disponibles para compra.</li>
+            <li><strong>Carreras de Stakes:</strong> Compiten los mejores ejemplares del circuito.</li>
         </ul>
 
         <center>
-            <a href="/" class="back-link">← VOLVER AL CENTRO DE PRONÓSTICOS</a>
+            <a href="/" class="back-link">← VOLVER AL INICIO</a>
         </center>
     </div>
 </div>
