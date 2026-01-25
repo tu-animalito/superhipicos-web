@@ -1,10 +1,5 @@
-# Directorio de instrucciones para buscadores - Super Hipicos
 User-agent: *
 Allow: /
 
-# Evitar que se indexen archivos de sistema o carpetas vacias si las tuvieras
-Disallow: /README.md
-Disallow: /LICENSE
-
-# Ruta directa al mapa del sitio para mejorar el SEO
+# Sitemap de tu sitio en GitHub
 Sitemap: https://superhipicos.com.ve/sitemap.xml
