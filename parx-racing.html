@@ -61,6 +61,25 @@
         .tabla-marcas td { padding: 12px 15px; border-bottom: 1px solid #eee; font-weight: 700; font-size: 0.95rem; }
         .race-num { color: var(--parx-blue); font-weight: 900; width: 35%; }
 
+        /* Estilos para el Video */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin: 30px 0;
+            border: 3px solid var(--parx-blue);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         .info-box { background: #f0f4f8; padding: 20px; border-radius: 8px; border-top: 4px solid var(--parx-blue); margin: 30px 0; }
 
         .jinetes-box { background: #fff5f5; padding: 20px; border-radius: 8px; border-left: 5px solid var(--parx-red); margin: 25px 0; }
@@ -115,6 +134,11 @@
             </tbody>
         </table>
 
+        <h2>Análisis en Vídeo</h2>
+        <p>Disfruta de nuestro resumen hípico y proyecciones visuales para la jornada de hoy. No olvides suscribirte a nuestro canal para más contenido exclusivo.</p>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/ID_DEL_VIDEO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
         <h2>Historia y Detalles del Hipódromo</h2>
         <p>
             <strong>Parx Racing</strong> es un hipódromo ubicado en el condado de Bucks en el estado de Filadelfia. Anteriormente conocido como Philadelphia Park Racetrack y Casino, este óvalo fue inaugurado como <strong>Keystone Racetrack</strong> el 4 de noviembre de 1974. 
@@ -154,4 +178,3 @@
 
 </body>
 </html>
-
