@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Aqueduct Racetrack Hoy | Proyecciones y Marcas</title>
+    <meta name="description" content="Consigue los mejores datos de Aqueduct Racetrack. Análisis técnico y marcas por carrera para el óvalo de Nueva York. ¡Maximiza tus probabilidades hoy!">
+    <link rel="canonical" href="https://superhipicos.com.ve/aqueduct-racetrack.html" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --aq-navy: #002147; /* Azul NYRA */
+            --aq-gold: #b8860b;
+            --aq-red: #d32f2f;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg-light); color: #333; line-height: 1.8; width: 100%; overflow-x: hidden; }
+        p, ul li { text-align: justify; }
+
+        header { 
+            background: var(--white);
+            text-align: center; padding: 20px; 
+            border-bottom: 5px solid var(--aq-navy);
+        }
+        .logo-small img { max-width: 150px; height: auto; }
+
+        .article-container { 
+            max-width: 100%; 
+            width: 100%; 
+            margin: 0 auto; 
+            background: var(--white); 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+            overflow: hidden; 
+        }
+        
+        @media (min-width: 900px) {
+            .article-container { width: 900px; margin: 40px auto; border-radius: 12px; }
+        }
+        
+        .content-padding { padding: 25px 15px; }
+        @media (min-width: 600px) { .content-padding { padding: 40px; } }
+
+        h1 { font-family: 'Orbitron', sans-serif; color: var(--aq-navy); font-size: 1.6rem; margin-bottom: 25px; text-align: center; border-left: 6px solid var(--aq-gold); padding-left: 15px; }
+        @media (min-width: 600px) { h1 { font-size: 1.8rem; text-align: left; } }
+
+        h2 { color: var(--aq-navy); border-left: 5px solid var(--aq-gold); padding-left: 15px; margin-top: 40px; }
+
+        .tabla-marcas { 
+            width: 100%; border-collapse: collapse; background: #fff; 
+            border: 2px solid #ddd; border-radius: 8px; overflow: hidden; margin-bottom: 30px;
+        }
+        .tabla-marcas th { background: var(--aq-navy); color: white; padding: 15px; text-transform: uppercase; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; }
+        .tabla-marcas td { padding: 12px 15px; border-bottom: 1px solid #eee; font-weight: 700; font-size: 0.95rem; }
+        .race-num { color: var(--aq-navy); font-weight: 900; width: 35%; }
+        .race-picks { color: #222; }
+        .fijo-tag { background: var(--aq-red); color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; margin-left: 5px; vertical-align: middle; }
+
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; margin: 30px 0; border-radius: 8px; overflow: hidden; background: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        .info-box { background: #f0f4f8; padding: 20px; border-radius: 8px; border-top: 4px solid var(--aq-navy); margin: 30px 0; }
+        @media (min-width: 600px) { .info-box { padding: 25px; } }
+
+        footer { text-align: center; padding: 40px 20px; background: var(--aq-navy); color: white; margin-top: 50px; }
+        .back-link { display: inline-block; margin-top: 20px; color: var(--aq-gold); text-decoration: none; font-weight: bold; border-bottom: 2px solid var(--aq-gold); }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-small">
+        <a href="/">
+            <img src="https://raw.githubusercontent.com/tu-animalito/superhipicos-web/refs/heads/main/img/super-hipicos-logo.png" alt="Super Hipicos">
+        </a>
+    </div>
+</header>
+
+<div class="article-container">
+    <div class="content-padding">
+        <h1>Datos de Aqueduct Racetrack: Pronósticos y Análisis Técnico</h1>
+        
+        <p>
+            ¿Buscas <strong>buenas proyecciones para el hipódromo de Aqueduct</strong>? En <strong>Super Hípicos</strong> analizamos cada jornada en Nueva York para ofrecerte las marcas más precisas, los <em>Best Bets</em> del día y toda la información técnica necesaria para una de las pistas más exigentes de Estados Unidos. Presentamos el reporte para este 13 de Noviembre.
+        </p>
+        
+        <table class="tabla-marcas">
+            <thead>
+                <tr>
+                    <th colspan="2">📍 MARCAS SUGERIDAS - AQUEDUCT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="race-num">Race 1</td><td class="race-picks">6 - 5</td></tr>
+                <tr><td class="race-num">Race 2</td><td class="race-picks">1 Oconee Life<span class="fijo-tag">BEST BET</span></td></tr>
+                <tr><td class="race-num">Race 3</td><td class="race-picks">6 Ruby River<span class="fijo-tag">BEST BET</span></td></tr>
+                <tr><td class="race-num">Race 4</td><td class="race-picks">6 Camm's Princess<span class="fijo-tag">BEST BET</span></td></tr>
+                <tr><td class="race-num">Race 5</td><td class="race-picks">3 Denver's Alley<span class="fijo-tag">BEST BET</span></td></tr>
+                <tr><td class="race-num">Race 6</td><td class="race-picks">2 Neoequos<span class="fijo-tag">BEST BET</span></td></tr>
+                <tr><td class="race-num">Race 7</td><td class="race-picks">8 - 4</td></tr>
+                <tr><td class="race-num">Race 8</td><td class="race-picks">7 - 4</td></tr>
+                <tr><td class="race-num">Race 9</td><td class="race-picks">2 - 9</td></tr>
+            </tbody>
+        </table>
+
+        <h2>📺 Resumen de Carreras y Análisis</h2>
+        <p>Accede a nuestro contenido multimedia para repasar los movimientos de los ejemplares en la pista de arena y grama de "The Big A".</p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO" allowfullscreen></iframe>
+        </div>
+
+        <h2>Sobre el Óvalo de Aqueduct</h2>
+        <p>
+            Aqueduct es uno de los principales hipódromos del estado de Nueva York. Ubicado en South Ozone Park, es un referente histórico que ha albergado competencias de pura sangre desde 1894. Junto a Belmont Park y Saratoga, conforma el prestigioso circuito de la NYRA. Su infraestructura cuenta con una capacidad para 40,000 espectadores y es el único complejo hípico con casino de tragamonedas dentro de la ciudad de Nueva York.
+        </p>
+
+        <div class="info-box">
+            <h3>🏆 Clásicos de Grado 1 en Aqueduct</h3>
+            <ul>
+                <li><strong>Wood Memorial (G1):</strong> El evento más importante del año para ejemplares de 3 años, vital en la ruta al Kentucky Derby.</li>
+                <li><strong>Cigar Mile Handicap (G1):</strong> Una milla de alto nivel celebrada en noviembre en honor al legendario Cigar.</li>
+                <li><strong>Carter Handicap (G1):</strong> Una prueba de velocidad (7 furlones) con más de un siglo de historia.</li>
+            </ul>
+        </div>
+
+        <p>
+            Nuestras <strong>proyecciones de Aqueduct</strong> se basan en el estudio de las condiciones climáticas de Nueva York y el desempeño de los jinetes locales.</strong>
+        </p>
+
+        <center>
+            <a href="/" class="back-link">← VOLVER AL INICIO</a>
+        </center>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 superhipicos.com.ve</p>
+    <small>Expertos en el Deporte de los Reyes y Análisis Deportivos</small>
+</footer>
+
+</body>
+</html>
+
