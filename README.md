@@ -1,16 +1,17 @@
-# 🐾 Sistema de Proyecciones Probabilísticas: Lotería de Animalitos
+# 🏇 Engine de Proyecciones Hípicas: Nacional e Internacional 
 
-Este repositorio contiene la arquitectura de datos y el frontend para la plataforma de análisis de **Lotto Activo**, **La Granjita** y sorteos aliados. El enfoque principal es el modelado de tendencias basado en la frecuencia de salida.
+Repositorio para el desarrollo de la interfaz analítica de **Súper Hípicos**. Implementamos modelos de datos para el seguimiento del hipismo nacional en Venezuela e internacional, enfocados en el rendimiento atlético de los ejemplares.
 
-## 📈 Metodología de Proyección
-Nuestras proyecciones para los sorteos de hoy se basan en tres pilares de datos:
-1. **Análisis de Frecuencia:** Seguimiento histórico de las figuras que más se repiten en periodos de 24h, 7 días y 30 días.
-2. **Ciclos de Salida:** Algoritmo que identifica patrones de rotación entre los diferentes animales de la ruleta.
-3. **Tendencias del Día:** Procesamiento de resultados en tiempo real para ajustar las proyecciones en cada sorteo horario.
+## 📊 Variables de Análisis (Predictive Analytics)
+Para generar nuestras proyecciones hípicas, el sistema procesa:
+* **Speed Figures:** Cálculo de velocidad ajustada por distancia y variante de pista.
+* **Métricas de Rendimiento:** Comparativa de tiempos parciales y remates de jinetes/ejemplares.
+* **Reporte de Incidencias:** Integración de **Retirados**, cambios de monta y condiciones climáticas de La Rinconada.
+* **Estadísticas:** Base de datos histórica para proyecciones de cuadros y pollas hípicas.
 
-## 🚀 Acceso a la Plataforma
-Consulta las proyecciones actualizadas y los resultados oficiales aquí:
-👉 **[Portal de Datos: Tu Animalito](https://tuanimalito.com.ve)**
+## 🔗 Plataforma de Datos
+Accede a la gaceta digital y a los reportes de proyecciones aquí:
+👉 **[Análisis Hípico: Súper Hípicos](https://www.superhipicos.com.ve/)**
 
 ---
-*Aviso Legal: Este software es una herramienta de análisis estadístico. No garantizamos resultados y promovemos el juego responsable.*
+*Desarrollado como herramienta de soporte para el análisis técnico deportivo.*
